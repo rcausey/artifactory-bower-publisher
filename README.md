@@ -1,6 +1,6 @@
 # artifactory-bower-publisher
 
-CLI to publish Bower packages to Artifactory.
+CLI tool to publish Bower packages to Artifactory using the version specified in `bower.json`.
 
 ## Usage
 
