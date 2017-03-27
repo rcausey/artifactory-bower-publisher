@@ -17,7 +17,8 @@ var options = {
 	credentials: {
 		username: argv.u,
 		password: argv.p
-	}
+	},
+	overwrite: false
 };
 
 var root = process.cwd();
@@ -29,8 +30,12 @@ execSync('tar --exclude=.* --exclude=node_modules --exclude=bower_components --e
 
 var destUrl = baseUrl + '/' + name + '/' + filename;
 publisher.publish(root + '/' + filename, destUrl, options)
-	.then(function() {
-		console.log('Artifact published successfully.');
+	.then(function(published) {
+		if (published) {
+			console.log('Artifact published successfully.');
+		} else {
+			console.log('Publishing aborted. File already exists.');
+		}
 	}).catch(function(err) {
 		console.error('Artifact failed to publish: ' + err);
 	});
