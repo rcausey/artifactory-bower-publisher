@@ -5,6 +5,7 @@
     "type": "git",
     "url": "git+https://github.com/rcausey/artifactory-bower-publisher.git"
   },
+  "license": "MIT",
   "dependencies": {
     "artifactory-publisher": "git+https://github.com/rcausey/artifactory-publisher.git#9b4293",
     "yargs": "^6.6.0"
